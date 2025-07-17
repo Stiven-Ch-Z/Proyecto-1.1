@@ -35,9 +35,9 @@
             lblnombre = new Label();
             lblprecio = new Label();
             lblhorarios = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtrutas = new TextBox();
+            txtprecio = new TextBox();
+            txthorarios = new TextBox();
             SuspendLayout();
             // 
             // btnvolver_rut
@@ -46,21 +46,23 @@
             btnvolver_rut.BackgroundImageLayout = ImageLayout.Stretch;
             btnvolver_rut.FlatStyle = FlatStyle.Popup;
             btnvolver_rut.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnvolver_rut.Location = new Point(645, 480);
+            btnvolver_rut.Location = new Point(564, 360);
+            btnvolver_rut.Margin = new Padding(3, 2, 3, 2);
             btnvolver_rut.Name = "btnvolver_rut";
             btnvolver_rut.RightToLeft = RightToLeft.Yes;
-            btnvolver_rut.Size = new Size(121, 37);
+            btnvolver_rut.Size = new Size(106, 28);
             btnvolver_rut.TabIndex = 15;
             btnvolver_rut.Text = "Volver";
             btnvolver_rut.UseVisualStyleBackColor = false;
+            btnvolver_rut.Click += btnvolver_rut_Click;
             // 
             // lbltitutorutas
             // 
             lbltitutorutas.AutoSize = true;
             lbltitutorutas.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltitutorutas.Location = new Point(237, 9);
+            lbltitutorutas.Location = new Point(207, 7);
             lbltitutorutas.Name = "lbltitutorutas";
-            lbltitutorutas.Size = new Size(324, 38);
+            lbltitutorutas.Size = new Size(252, 30);
             lbltitutorutas.TabIndex = 19;
             lbltitutorutas.Text = "Menu de mantenimiento";
             // 
@@ -70,21 +72,23 @@
             btnanadir.BackgroundImageLayout = ImageLayout.Stretch;
             btnanadir.FlatStyle = FlatStyle.Popup;
             btnanadir.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnanadir.Location = new Point(63, 480);
+            btnanadir.Location = new Point(55, 360);
+            btnanadir.Margin = new Padding(3, 2, 3, 2);
             btnanadir.Name = "btnanadir";
             btnanadir.RightToLeft = RightToLeft.Yes;
-            btnanadir.Size = new Size(121, 37);
+            btnanadir.Size = new Size(106, 28);
             btnanadir.TabIndex = 20;
             btnanadir.Text = "Añadir";
             btnanadir.UseVisualStyleBackColor = false;
+            btnanadir.Click += btnanadir_Click;
             // 
             // lblinfo
             // 
             lblinfo.AutoSize = true;
             lblinfo.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblinfo.Location = new Point(198, 47);
+            lblinfo.Location = new Point(173, 35);
             lblinfo.Name = "lblinfo";
-            lblinfo.Size = new Size(404, 28);
+            lblinfo.Size = new Size(325, 21);
             lblinfo.TabIndex = 21;
             lblinfo.Text = "Llene los espacios para añadir una nueva ruta";
             // 
@@ -92,9 +96,9 @@
             // 
             lblnombre.AutoSize = true;
             lblnombre.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblnombre.Location = new Point(133, 165);
+            lblnombre.Location = new Point(116, 124);
             lblnombre.Name = "lblnombre";
-            lblnombre.Size = new Size(176, 28);
+            lblnombre.Size = new Size(140, 21);
             lblnombre.TabIndex = 22;
             lblnombre.Text = "Nombre de la ruta:";
             // 
@@ -102,9 +106,9 @@
             // 
             lblprecio.AutoSize = true;
             lblprecio.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblprecio.Location = new Point(107, 249);
+            lblprecio.Location = new Point(94, 187);
             lblprecio.Name = "lblprecio";
-            lblprecio.Size = new Size(202, 28);
+            lblprecio.Size = new Size(161, 21);
             lblprecio.TabIndex = 23;
             lblprecio.Text = "Precio base de la ruta:";
             // 
@@ -112,42 +116,45 @@
             // 
             lblhorarios.AutoSize = true;
             lblhorarios.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblhorarios.Location = new Point(131, 334);
+            lblhorarios.Location = new Point(115, 250);
             lblhorarios.Name = "lblhorarios";
-            lblhorarios.Size = new Size(178, 28);
+            lblhorarios.Size = new Size(142, 21);
             lblhorarios.TabIndex = 24;
             lblhorarios.Text = "Horarios de la ruta:";
             // 
-            // textBox1
+            // txtrutas
             // 
-            textBox1.Location = new Point(307, 169);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(349, 27);
-            textBox1.TabIndex = 25;
+            txtrutas.Location = new Point(269, 127);
+            txtrutas.Margin = new Padding(3, 2, 3, 2);
+            txtrutas.Name = "txtrutas";
+            txtrutas.Size = new Size(306, 23);
+            txtrutas.TabIndex = 25;
             // 
-            // textBox2
+            // txtprecio
             // 
-            textBox2.Location = new Point(307, 253);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(349, 27);
-            textBox2.TabIndex = 26;
+            txtprecio.Location = new Point(269, 190);
+            txtprecio.Margin = new Padding(3, 2, 3, 2);
+            txtprecio.Name = "txtprecio";
+            txtprecio.Size = new Size(306, 23);
+            txtprecio.TabIndex = 26;
             // 
-            // textBox3
+            // txthorarios
             // 
-            textBox3.Location = new Point(307, 338);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(349, 27);
-            textBox3.TabIndex = 27;
+            txthorarios.Location = new Point(269, 254);
+            txthorarios.Margin = new Padding(3, 2, 3, 2);
+            txthorarios.Name = "txthorarios";
+            txthorarios.Size = new Size(306, 23);
+            txthorarios.TabIndex = 27;
             // 
             // Form_rutas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(828, 529);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            ClientSize = new Size(724, 397);
+            Controls.Add(txthorarios);
+            Controls.Add(txtprecio);
+            Controls.Add(txtrutas);
             Controls.Add(lblhorarios);
             Controls.Add(lblprecio);
             Controls.Add(lblnombre);
@@ -155,7 +162,6 @@
             Controls.Add(btnanadir);
             Controls.Add(lbltitutorutas);
             Controls.Add(btnvolver_rut);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form_rutas";
             Text = "Form_rutas";
             Load += Form_rutas_Load;
@@ -172,8 +178,8 @@
         private Label lblnombre;
         private Label lblprecio;
         private Label lblhorarios;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtrutas;
+        private TextBox txtprecio;
+        private TextBox txthorarios;
     }
 }
