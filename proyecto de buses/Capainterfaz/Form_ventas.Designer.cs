@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ventas));
-            btnatras = new Button();
+            btnvolver_ventas = new Button();
             SuspendLayout();
             // 
-            // btnatras
+            // btnvolver_ventas
             // 
-            btnatras.BackColor = Color.Cyan;
-            btnatras.Font = new Font("Harlow Solid Italic", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnatras.Location = new Point(28, 413);
-            btnatras.Name = "btnatras";
-            btnatras.Size = new Size(75, 23);
-            btnatras.TabIndex = 0;
-            btnatras.Text = "⏪Atras";
-            btnatras.UseVisualStyleBackColor = false;
+            btnvolver_ventas.BackColor = Color.FromArgb(224, 224, 224);
+            btnvolver_ventas.BackgroundImageLayout = ImageLayout.Stretch;
+            btnvolver_ventas.FlatStyle = FlatStyle.Popup;
+            btnvolver_ventas.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnvolver_ventas.Location = new Point(24, 551);
+            btnvolver_ventas.Name = "btnvolver_ventas";
+            btnvolver_ventas.RightToLeft = RightToLeft.Yes;
+            btnvolver_ventas.Size = new Size(160, 37);
+            btnvolver_ventas.TabIndex = 14;
+            btnvolver_ventas.Text = "Volver";
+            btnvolver_ventas.UseVisualStyleBackColor = false;
             // 
             // Form_ventas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnatras);
+            ClientSize = new Size(914, 600);
+            Controls.Add(btnvolver_ventas);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form_ventas";
             Text = "Form_ventas";
             ResumeLayout(false);
@@ -58,6 +60,6 @@
 
         #endregion
 
-        private Button btnatras;
+        private Button btnvolver_ventas;
     }
 }

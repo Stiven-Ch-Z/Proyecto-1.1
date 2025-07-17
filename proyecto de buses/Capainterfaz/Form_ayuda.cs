@@ -16,5 +16,10 @@ namespace proyecto_de_buses.Capainterfaz
         {
             InitializeComponent();
         }
+
+        private void btnacerca_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

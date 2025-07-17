@@ -59,5 +59,15 @@ namespace proyecto_de_buses.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_07_15_at_8_04_05_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-07-15 at 8.04.05 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
