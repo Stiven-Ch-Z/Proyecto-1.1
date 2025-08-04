@@ -1,4 +1,6 @@
-﻿using System;
+﻿using proyecto_de_buses.Capadatos;
+using proyecto_de_buses.Capalogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,39 +15,62 @@ namespace proyecto_de_buses.Capainterfaz
 {
     public partial class Form_rutas : Form
     {
-        public Form_rutas()
+        private LogicaRuta logica;
+        public Form_rutas(LogicaRuta logicaRuta)
         {
             InitializeComponent();
+            cbohorario.DropDownStyle = ComboBoxStyle.DropDownList; // esto hace que solo se puedan elegir las opciones del combobox
+            logica = logicaRuta;
         }
 
         private void Form_rutas_Load(object sender, EventArgs e)
         {
 
         }
+        private void Limpiar()
+        {
+            txtrutas.Clear();
+            txtprecio.Clear();
+            cbohorario.SelectedIndex=-1;
+        }
+        private bool ValidarCampos()
+        {
+            bool esvalido = true;
+            errorProviderRutas.Clear();
 
+            if (string.IsNullOrWhiteSpace(txtrutas.Text)) //valida si el nombre esta vacio o no
+            {
+                errorProviderRutas.SetError(txtrutas, "El nombre no puede quedar vacio");// si esta vacio el errorProvider da este mensaje 
+                esvalido = false;
+            }
+            if (!decimal.TryParse(txtprecio.Text, out decimal precio) || precio <= 0)
+            {
+                errorProviderRutas.SetError(txtprecio, "La cantidad debe de ser un numero entero");// si se escribe una cantidad incorrecta muestra este mensaje de advertencia
+                esvalido = false;
+            }
+
+            if (cbohorario.SelectedIndex == -1) // si el combobox esta vacio 
+            {
+                errorProviderRutas.SetError(cbohorario, "Elija una hora para la ruta");
+                esvalido = false;
+            }
+            return esvalido;
+        }
         private void btnanadir_Click(object sender, EventArgs e)
-        {     
-            string nombreRuta = txtrutas.Text;//para obtener el nombre de las rutas
-            string precioBase = txtprecio.Text;//para obtener el precio base
-            string horarios = txthorarios.Text;//para obtener los horarios
-            
-            //esto se asegura que los campos esten llenos
-            if (string.IsNullOrWhiteSpace(nombreRuta) || string.IsNullOrWhiteSpace(precioBase) || string.IsNullOrWhiteSpace(horarios))
+        {
+            if (!ValidarCampos())
             {
-                MessageBox.Show(" !!LO SIENTO!! Por favor llene los campos"); //muestra este mensaje si hay error
-                return;
-
-            }
-            if (!decimal.TryParse(precioBase, out decimal precio))// se asegura que el prcio sean solo letras
-            {
-                MessageBox.Show("!!LO SIENTO!!El precio debe de ser un numero valido");// si hay letras en el precio nos muestra este mensaje
                 return;
             }
-
-            MessageBox.Show("La ruta se agrego con exito");//cuando la ruta se agrega nos da este mensaje
-            txtrutas.Clear();//limpia el campo de rutas
-            txthorarios.Clear();//limpia el campo de horarios
-            txtprecio.Clear();//limpia el campo de precio
+            Rutas ruta = new Rutas
+            {
+                Destino = txtrutas.Text,
+                Precio = decimal.Parse(txtprecio.Text),
+                Horasalida = cbohorario.SelectedItem.ToString()
+            };
+            logica.AgregarRuta(ruta);
+            MessageBox.Show("La ruta ha sido agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Limpiar();
         }
        
 

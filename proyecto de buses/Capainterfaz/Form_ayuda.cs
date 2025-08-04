@@ -20,19 +20,19 @@ namespace proyecto_de_buses.Capainterfaz
         private void btnverayuda_Click(object sender, EventArgs e)
         {    //nos da informaciongeneral  de la plataforma en mensaje
             MessageBox.Show(
-                            "MANTENIMIENTO: Editar rutas y horarios.\n" +
+                            "Mantenimiento: Aqui se puede editar y crear rutas con sus horarios, solo llene los espacios solicitados y agreguelos con el boton.\n" +
 
-                            "VENTAS: Ver tiquetes vendidos, seleccionar acientos\n" +
+                            "Ventas: para realizar ventas de tiquetes, seleccione los asientos deseados y llene los datos del clientes para agregarlo\n" +
 
-                            "HISTORIAL: Ver historial de ventas.\n" +
+                            "Historial: Ver el total de ventas realizadas y la informacion de cada una.\n" +
 
-                            "AYUDA: Ver informacion general del sistema.\n" +
+                            "Ayuda: Muestra una breve explicacion de cada boton.\n" +
 
-                            "SALIR: Salir del sistema.");
+                            "Salir: Cierra el sistema.","Informacion del programa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnacerca_Click(object sender, EventArgs e)
         {   //nos da el mensaje de quienes hicieron la plataforma
-            MessageBox.Show("Esta plataforma fue creada por Steven Chinchilla y Josue Navarro Monge. ¡¡MUCHAS GRACIAS!!");
+            MessageBox.Show("Esta plataforma fue creada por Stiven Chinchilla Zamora y Josue Navarro Monge. ¡Gracias por su apoyo!", "Creditos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnvolver_ayu_Click(object sender, EventArgs e)

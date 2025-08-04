@@ -9,16 +9,15 @@ namespace proyecto_de_buses.Capadatos
     public class Rutas
     {
         public string Destino { get; set; }
-        public int Precio { get; set; }
-        public string Salida { get; set; }
+        public decimal Precio { get; set; }
+        public string Horasalida { get; set; }
 
-        public Rutas(string destino, int precio, string salida)
+        public override string ToString()
         {
-            Destino = destino;
-            Precio = precio;
-            Salida = salida;
+            return $"{Destino}-{Horasalida}-₡{Precio}";
         }
     }
     
+
     
 }

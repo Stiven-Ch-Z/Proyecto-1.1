@@ -1,9 +1,11 @@
 using proyecto_de_buses.Capainterfaz;
+using proyecto_de_buses.Capalogica;
 
 namespace proyecto_de_buses
 {
     public partial class Form1 : Form
     {
+        private LogicaRuta logicaRuta = new LogicaRuta();
         public Form1()
         {
             InitializeComponent();
@@ -11,7 +13,7 @@ namespace proyecto_de_buses
 
         private void btnmantenimiento_Click(object sender, EventArgs e)
         {
-            Form_rutas rutas = new Form_rutas();
+            Form_rutas rutas = new Form_rutas(logicaRuta);
             this.Hide();
             rutas.ShowDialog();
             this.Show();
@@ -19,7 +21,7 @@ namespace proyecto_de_buses
 
         private void btnventas_Click(object sender, EventArgs e)
         {
-            Form_ventas ventas = new Form_ventas();
+            Form_ventas ventas = new Form_ventas(logicaRuta);
             this.Hide();
             ventas.ShowDialog();
             this.Show();
@@ -48,6 +50,11 @@ namespace proyecto_de_buses
             {
                 Application.Exit();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
