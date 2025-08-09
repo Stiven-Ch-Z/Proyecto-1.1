@@ -13,5 +13,6 @@ namespace proyecto_de_buses.Capadatos
         public string Ruta { get; set; }
         
         public string Fecha { get; set; }
+
     }
 }

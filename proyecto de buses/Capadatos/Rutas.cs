@@ -11,10 +11,11 @@ namespace proyecto_de_buses.Capadatos
         public string Destino { get; set; }
         public decimal Precio { get; set; }
         public string Horasalida { get; set; }
+        public string Horallegada {  get; set; }
 
         public override string ToString()
         {
-            return $"{Destino}-{Horasalida}-₡{Precio}";
+            return $"{Destino}-{Horasalida}-{Horallegada}-₡{Precio}";
         }
     }
     

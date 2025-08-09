@@ -37,11 +37,12 @@
             // 
             // btnvolver_ayu
             // 
+            btnvolver_ayu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnvolver_ayu.BackColor = Color.FromArgb(224, 224, 224);
             btnvolver_ayu.BackgroundImageLayout = ImageLayout.Stretch;
             btnvolver_ayu.FlatStyle = FlatStyle.Popup;
             btnvolver_ayu.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnvolver_ayu.Location = new Point(195, 371);
+            btnvolver_ayu.Location = new Point(397, 379);
             btnvolver_ayu.Name = "btnvolver_ayu";
             btnvolver_ayu.RightToLeft = RightToLeft.Yes;
             btnvolver_ayu.Size = new Size(160, 37);
@@ -52,11 +53,12 @@
             // 
             // btnacerca
             // 
+            btnacerca.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnacerca.BackColor = Color.FromArgb(192, 255, 192);
             btnacerca.BackgroundImageLayout = ImageLayout.Stretch;
             btnacerca.FlatStyle = FlatStyle.Popup;
             btnacerca.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnacerca.Location = new Point(195, 213);
+            btnacerca.Location = new Point(197, 255);
             btnacerca.Name = "btnacerca";
             btnacerca.RightToLeft = RightToLeft.Yes;
             btnacerca.Size = new Size(160, 37);
@@ -67,12 +69,12 @@
             // 
             // btnverayuda
             // 
-            btnverayuda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            btnverayuda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnverayuda.BackColor = Color.FromArgb(192, 255, 192);
             btnverayuda.BackgroundImageLayout = ImageLayout.Stretch;
             btnverayuda.FlatStyle = FlatStyle.Popup;
             btnverayuda.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnverayuda.Location = new Point(195, 139);
+            btnverayuda.Location = new Point(197, 152);
             btnverayuda.Name = "btnverayuda";
             btnverayuda.RightToLeft = RightToLeft.Yes;
             btnverayuda.Size = new Size(160, 37);
@@ -83,7 +85,9 @@
             // 
             // lbltitulo
             // 
+            lbltitulo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             lbltitulo.AutoSize = true;
+            lbltitulo.BackColor = SystemColors.ControlLightLight;
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbltitulo.Location = new Point(173, 9);
             lbltitulo.Name = "lbltitulo";
@@ -93,7 +97,9 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.ControlLightLight;
             label1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(136, 47);
             label1.Name = "label1";
@@ -109,13 +115,14 @@
             BackColor = SystemColors.InactiveBorder;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(569, 428);
+            Controls.Add(btnacerca);
             Controls.Add(label1);
             Controls.Add(lbltitulo);
             Controls.Add(btnverayuda);
-            Controls.Add(btnacerca);
             Controls.Add(btnvolver_ayu);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_ayuda";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form_ayuda";
             ResumeLayout(false);
             PerformLayout();

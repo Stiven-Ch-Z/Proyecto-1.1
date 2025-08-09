@@ -28,27 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnayuda = new Button();
             lbltitulo = new Label();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             btnmantenimiento = new Button();
             btnhistorial = new Button();
             btnventas = new Button();
             btnsalir = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnayuda
             // 
-            btnayuda.BackColor = Color.FromArgb(192, 255, 192);
+            btnayuda.BackColor = Color.LightSteelBlue;
             btnayuda.BackgroundImageLayout = ImageLayout.Stretch;
             btnayuda.FlatStyle = FlatStyle.Popup;
             btnayuda.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnayuda.Location = new Point(91, 298);
+            btnayuda.ForeColor = SystemColors.ActiveCaptionText;
+            btnayuda.Location = new Point(559, 67);
             btnayuda.Name = "btnayuda";
             btnayuda.RightToLeft = RightToLeft.Yes;
-            btnayuda.Size = new Size(160, 37);
+            btnayuda.Size = new Size(134, 37);
             btnayuda.TabIndex = 1;
             btnayuda.Text = "Ayuda";
             btnayuda.UseVisualStyleBackColor = false;
@@ -57,44 +64,40 @@
             // lbltitulo
             // 
             lbltitulo.AutoSize = true;
+            lbltitulo.BackColor = Color.FromArgb(64, 0, 0);
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltitulo.Location = new Point(72, 21);
+            lbltitulo.ForeColor = SystemColors.ControlLightLight;
+            lbltitulo.Location = new Point(56, 241);
             lbltitulo.Name = "lbltitulo";
-            lbltitulo.Size = new Size(451, 38);
+            lbltitulo.Size = new Size(704, 38);
             lbltitulo.TabIndex = 7;
-            lbltitulo.Text = "Bienvenido al gestor de la empresa";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2025_07_15_at_8_04_05_PM;
-            pictureBox1.Location = new Point(399, 127);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(362, 312);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
+            lbltitulo.Text = "Bienvenido al gestor de la empresa Gran Central Sabalo";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(64, 0, 0);
             label1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(82, 59);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(39, 279);
             label1.Name = "label1";
-            label1.Size = new Size(289, 28);
+            label1.Size = new Size(741, 28);
             label1.TabIndex = 9;
-            label1.Text = "Por favor seleccione una opcion";
+            label1.Text = "Por favor seleccione una de las opciones que se encuentran en los botones de arriba";
+            label1.Click += label1_Click;
             // 
             // btnmantenimiento
             // 
-            btnmantenimiento.BackColor = Color.FromArgb(224, 224, 224);
+            btnmantenimiento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnmantenimiento.BackColor = Color.LightSteelBlue;
             btnmantenimiento.BackgroundImageLayout = ImageLayout.Stretch;
             btnmantenimiento.FlatStyle = FlatStyle.Popup;
             btnmantenimiento.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnmantenimiento.Location = new Point(91, 121);
+            btnmantenimiento.ForeColor = SystemColors.ActiveCaptionText;
+            btnmantenimiento.Location = new Point(292, 24);
             btnmantenimiento.Name = "btnmantenimiento";
             btnmantenimiento.RightToLeft = RightToLeft.Yes;
-            btnmantenimiento.Size = new Size(160, 37);
+            btnmantenimiento.Size = new Size(156, 37);
             btnmantenimiento.TabIndex = 10;
             btnmantenimiento.Text = "Mantenimiento";
             btnmantenimiento.UseVisualStyleBackColor = false;
@@ -102,14 +105,16 @@
             // 
             // btnhistorial
             // 
-            btnhistorial.BackColor = Color.FromArgb(224, 224, 224);
-            btnhistorial.BackgroundImageLayout = ImageLayout.Stretch;
+            btnhistorial.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnhistorial.BackColor = Color.LightSteelBlue;
+            btnhistorial.BackgroundImageLayout = ImageLayout.None;
             btnhistorial.FlatStyle = FlatStyle.Popup;
             btnhistorial.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnhistorial.Location = new Point(91, 237);
+            btnhistorial.ForeColor = SystemColors.ActiveCaptionText;
+            btnhistorial.Location = new Point(635, 24);
             btnhistorial.Name = "btnhistorial";
             btnhistorial.RightToLeft = RightToLeft.Yes;
-            btnhistorial.Size = new Size(160, 37);
+            btnhistorial.Size = new Size(145, 37);
             btnhistorial.TabIndex = 11;
             btnhistorial.Text = "Historial";
             btnhistorial.UseVisualStyleBackColor = false;
@@ -117,14 +122,16 @@
             // 
             // btnventas
             // 
-            btnventas.BackColor = Color.FromArgb(224, 224, 224);
+            btnventas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnventas.BackColor = Color.LightSteelBlue;
             btnventas.BackgroundImageLayout = ImageLayout.Stretch;
             btnventas.FlatStyle = FlatStyle.Popup;
             btnventas.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnventas.Location = new Point(91, 177);
+            btnventas.ForeColor = SystemColors.ActiveCaptionText;
+            btnventas.Location = new Point(468, 24);
             btnventas.Name = "btnventas";
             btnventas.RightToLeft = RightToLeft.Yes;
-            btnventas.Size = new Size(160, 37);
+            btnventas.Size = new Size(141, 37);
             btnventas.TabIndex = 12;
             btnventas.Text = "Ventas";
             btnventas.UseVisualStyleBackColor = false;
@@ -132,18 +139,69 @@
             // 
             // btnsalir
             // 
-            btnsalir.BackColor = Color.FromArgb(255, 128, 128);
+            btnsalir.BackColor = Color.LightSteelBlue;
             btnsalir.BackgroundImageLayout = ImageLayout.Stretch;
             btnsalir.FlatStyle = FlatStyle.Popup;
             btnsalir.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnsalir.Location = new Point(91, 359);
+            btnsalir.ForeColor = SystemColors.ActiveCaptionText;
+            btnsalir.Location = new Point(372, 67);
             btnsalir.Name = "btnsalir";
             btnsalir.RightToLeft = RightToLeft.Yes;
-            btnsalir.Size = new Size(160, 37);
+            btnsalir.Size = new Size(141, 38);
             btnsalir.TabIndex = 13;
             btnsalir.Text = "Salir";
             btnsalir.UseVisualStyleBackColor = false;
             btnsalir.Click += btnsalir_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Lavender;
+            panel1.Controls.Add(btnventas);
+            panel1.Controls.Add(btnayuda);
+            panel1.Controls.Add(btnsalir);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(btnhistorial);
+            panel1.Controls.Add(btnmantenimiento);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(797, 140);
+            panel1.TabIndex = 14;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Plum;
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 124);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(797, 16);
+            panel2.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.Lavender;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(266, 136);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.BackColor = Color.Navy;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 142);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(797, 314);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -152,18 +210,17 @@
             BackColor = SystemColors.HighlightText;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(797, 451);
-            Controls.Add(btnsalir);
-            Controls.Add(btnventas);
-            Controls.Add(btnhistorial);
-            Controls.Add(btnmantenimiento);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
             Controls.Add(lbltitulo);
-            Controls.Add(btnayuda);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox2);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
+            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,11 +228,14 @@
         #endregion
         private Button btnayuda;
         private Label lbltitulo;
-        private PictureBox pictureBox1;
         private Label label1;
         private Button btnmantenimiento;
         private Button btnhistorial;
         private Button btnventas;
         private Button btnsalir;
+        private Panel panel1;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

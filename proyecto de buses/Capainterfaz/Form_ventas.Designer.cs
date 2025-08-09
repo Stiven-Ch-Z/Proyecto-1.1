@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ventas));
             btnvolver_ventas = new Button();
             cborutas = new ComboBox();
             tlpasientos = new TableLayoutPanel();
@@ -99,12 +100,18 @@
             btnconfirmar_ventas = new Button();
             dtfecha = new DateTimePicker();
             label2 = new Label();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             tlpasientos.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnvolver_ventas
             // 
-            btnvolver_ventas.BackColor = Color.FromArgb(224, 224, 224);
+            btnvolver_ventas.BackColor = Color.LightSteelBlue;
             btnvolver_ventas.BackgroundImageLayout = ImageLayout.Stretch;
             btnvolver_ventas.FlatStyle = FlatStyle.Popup;
             btnvolver_ventas.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -120,7 +127,7 @@
             // cborutas
             // 
             cborutas.FormattingEnabled = true;
-            cborutas.Location = new Point(399, 126);
+            cborutas.Location = new Point(212, 136);
             cborutas.Name = "cborutas";
             cborutas.Size = new Size(278, 28);
             cborutas.TabIndex = 15;
@@ -953,8 +960,10 @@
             // lbltitulo
             // 
             lbltitulo.AutoSize = true;
+            lbltitulo.BackColor = Color.Lavender;
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbltitulo.Location = new Point(332, 23);
+            lbltitulo.ForeColor = SystemColors.ActiveCaptionText;
+            lbltitulo.Location = new Point(81, 18);
             lbltitulo.Name = "lbltitulo";
             lbltitulo.Size = new Size(346, 38);
             lbltitulo.TabIndex = 79;
@@ -963,8 +972,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Lavender;
             label1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(309, 61);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(108, 56);
             label1.Name = "label1";
             label1.Size = new Size(384, 28);
             label1.TabIndex = 80;
@@ -974,7 +985,8 @@
             // 
             lbldistribucion.AutoSize = true;
             lbldistribucion.Font = new Font("Segoe UI Historic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbldistribucion.Location = new Point(349, 244);
+            lbldistribucion.ForeColor = SystemColors.ButtonHighlight;
+            lbldistribucion.Location = new Point(377, 253);
             lbldistribucion.Name = "lbldistribucion";
             lbldistribucion.Size = new Size(301, 31);
             lbldistribucion.TabIndex = 81;
@@ -984,7 +996,8 @@
             // 
             lblruta.AutoSize = true;
             lblruta.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblruta.Location = new Point(332, 126);
+            lblruta.ForeColor = SystemColors.ButtonHighlight;
+            lblruta.Location = new Point(136, 136);
             lblruta.Name = "lblruta";
             lblruta.Size = new Size(61, 28);
             lblruta.TabIndex = 82;
@@ -992,7 +1005,7 @@
             // 
             // btnconfirmar_ventas
             // 
-            btnconfirmar_ventas.BackColor = Color.FromArgb(224, 224, 224);
+            btnconfirmar_ventas.BackColor = Color.LightSteelBlue;
             btnconfirmar_ventas.BackgroundImageLayout = ImageLayout.Stretch;
             btnconfirmar_ventas.FlatStyle = FlatStyle.Popup;
             btnconfirmar_ventas.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1008,7 +1021,7 @@
             // dtfecha
             // 
             dtfecha.CalendarFont = new Font("Segoe UI Historic", 10F);
-            dtfecha.Location = new Point(397, 183);
+            dtfecha.Location = new Point(212, 195);
             dtfecha.Name = "dtfecha";
             dtfecha.Size = new Size(281, 27);
             dtfecha.TabIndex = 84;
@@ -1017,33 +1030,72 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(322, 181);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(136, 194);
             label2.Name = "label2";
             label2.Size = new Size(71, 28);
             label2.TabIndex = 85;
             label2.Text = "Fecha: ";
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Lavender;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(lbltitulo);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1037, 107);
+            panel1.TabIndex = 86;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(835, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(111, 81);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 87;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(95, 197);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(887, 466);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 87;
+            pictureBox2.TabStop = false;
+            // 
             // Form_ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkSlateBlue;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1037, 665);
+            Controls.Add(tlpasientos);
             Controls.Add(label2);
             Controls.Add(dtfecha);
             Controls.Add(btnconfirmar_ventas);
             Controls.Add(lblruta);
             Controls.Add(lbldistribucion);
-            Controls.Add(label1);
-            Controls.Add(lbltitulo);
-            Controls.Add(tlpasientos);
             Controls.Add(cborutas);
             Controls.Add(btnvolver_ventas);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox2);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_ventas";
-            Text = "Form_ventas";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Ventas de tiquets";
             Load += Form_ventas_Load;
             tlpasientos.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1121,5 +1173,8 @@
         private Button btnconfirmar_ventas;
         private DateTimePicker dtfecha;
         private Label label2;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
