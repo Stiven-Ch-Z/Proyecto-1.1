@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static proyecto_de_buses.Capadatos.Venta;
 
 namespace proyecto_de_buses.Capainterfaz
 {
@@ -17,6 +18,7 @@ namespace proyecto_de_buses.Capainterfaz
     {
         private List<int> asientosSeleccionados = new List<int>();
         private LogicaRuta logica = new LogicaRuta();
+
         public Form_ventas(LogicaRuta logicaRuta)
         {
             InitializeComponent();
@@ -28,9 +30,49 @@ namespace proyecto_de_buses.Capainterfaz
             cborutas.DropDownStyle = ComboBoxStyle.DropDownList;
             cborutas.DataSource = null;
             cborutas.DataSource = logica.Obtener();
-
+            PintarAsientos();
+        }
+        private void cborutas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            asientosSeleccionados.Clear();
+            PintarAsientos();
         }
 
+        private void dtfecha_ValueChanged(object sender, EventArgs e)
+        {
+            asientosSeleccionados.Clear();
+            PintarAsientos();
+        }
+        private void PintarAsientos()
+        {
+            // Pintar todos como disponibles
+            foreach (Control control in tlpasientos.Controls)
+            {
+                if (control is Button btn && btn.Name.StartsWith("btnsiento"))
+                {
+                    btn.BackColor = Color.LightGreen;
+                    btn.Enabled = true;
+                }
+            }
+
+            // Pintar como vendidos los asientos para la ruta y fecha actual
+            if (cborutas.SelectedItem is Rutas rutaSeleccionada)
+            {
+                var vendidos = LogicaAsiento.ObtenerVendidos()
+                    .Where(a => a.Ruta == rutaSeleccionada.Destino && a.Fecha == dtfecha.Value.ToShortDateString()).ToList();
+
+                foreach (var asiento in vendidos)
+                {
+                    var btn = tlpasientos.Controls.OfType<Button>().FirstOrDefault(b => b.Text == asiento.NumAsiento.ToString());
+
+                    if (btn != null)
+                    {
+                        btn.BackColor = Color.Red;
+                        btn.Enabled = false;
+                    }
+                }
+            }
+        }
         private void btnvolver_ventas_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -109,9 +151,58 @@ namespace proyecto_de_buses.Capainterfaz
             {
                 return;
             }
-            Asientos asinto = new Asientos();
 
-            MessageBox.Show("La ruta ha sido agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("ahora para continuar escriba el nombre y cedula del cliente.", "Asientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form_cliente formcliente = new Form_cliente();
+            if (formcliente.ShowDialog() == DialogResult.OK)
+            {
+                Cliente cliente = formcliente.Cliente;
+                Rutas ruta=(Rutas)cborutas.SelectedItem;
+                
+                
+                Venta venta = new Venta
+                {
+                    Cliente = cliente,
+                    Ruta = ruta.Destino,
+                    Hora_Salida = ruta.Horasalida ,
+                    Hora_Llegada=ruta.Horallegada,
+                    Asientos = new List<int>(asientosSeleccionados),
+                    Total = asientosSeleccionados.Count * ruta.Precio,
+                    Fecha = dtfecha.Value.Date
+                };
+                LogicaAgregarVenta.AgregarVenta(venta);
+
+                foreach (Control c in tlpasientos.Controls)
+                {
+                    if (c is Button b && b.BackColor ==Color.DarkGreen)
+                    {
+                        b.BackColor = Color.Red;
+                    }
+                }
+                foreach (int num in asientosSeleccionados)
+                {
+                    LogicaAsiento.MarcarVendidos(new Asientos
+                    {
+                        NumAsiento = num,
+                        Ruta = ruta.Destino,
+                        Fecha = dtfecha.Value.ToShortDateString()
+                    });
+
+                }
+                asientosSeleccionados.Clear();
+                PintarAsientos();
+                MessageBox.Show(
+                               $"Compra realizada con éxito.\n\n" +
+                               $"Cliente: {cliente.Nombre}\n" +
+                               $"Cédula: {cliente.Cedula}\n" +
+                               $"Total pagado: ₡{venta.Total:N0}",
+                               "Venta terminada",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information
+                               );
+
+            }
+
         }
 
         private void tlpasientos_Paint(object sender, PaintEventArgs e)

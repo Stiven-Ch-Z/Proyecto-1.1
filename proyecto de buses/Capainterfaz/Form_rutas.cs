@@ -19,7 +19,7 @@ namespace proyecto_de_buses.Capainterfaz
         public Form_rutas(LogicaRuta logicaRuta)
         {
             InitializeComponent();
-            cbohorario.DropDownStyle = ComboBoxStyle.DropDownList; // esto hace que solo se puedan elegir las opciones del combobox
+            cbohorasalida.DropDownStyle = ComboBoxStyle.DropDownList; // esto hace que solo se puedan elegir las opciones del combobox
             logica = logicaRuta;
         }
 
@@ -31,7 +31,8 @@ namespace proyecto_de_buses.Capainterfaz
         {
             txtrutas.Clear();
             txtprecio.Clear();
-            cbohorario.SelectedIndex=-1;
+            cbohorasalida.SelectedIndex = -1;
+            cbohorallegada.SelectedIndex = -1;
         }
         private bool ValidarCampos()
         {
@@ -49,9 +50,14 @@ namespace proyecto_de_buses.Capainterfaz
                 esvalido = false;
             }
 
-            if (cbohorario.SelectedIndex == -1) // si el combobox esta vacio 
+            if (cbohorasalida.SelectedIndex == -1) // si el combobox esta vacio 
             {
-                errorProviderRutas.SetError(cbohorario, "Elija una hora para la ruta");
+                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");
+                esvalido = false;
+            }
+            if (cbohorallegada.SelectedIndex == -1) // si el combobox esta vacio 
+            {
+                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");
                 esvalido = false;
             }
             return esvalido;
@@ -66,21 +72,19 @@ namespace proyecto_de_buses.Capainterfaz
             {
                 Destino = txtrutas.Text,
                 Precio = decimal.Parse(txtprecio.Text),
-                Horasalida = cbohorario.SelectedItem.ToString()
+                Horasalida = cbohorasalida.SelectedItem.ToString(),
+                Horallegada = cbohorallegada.SelectedItem.ToString()
             };
             logica.AgregarRuta(ruta);
             MessageBox.Show("La ruta ha sido agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Limpiar();
         }
-       
+
 
         private void btnvolver_rut_Click(object sender, EventArgs e)
         {
             this.Close();//nos da la opcion de volver 
         }
+
     }
-
-
-
-
 }           
