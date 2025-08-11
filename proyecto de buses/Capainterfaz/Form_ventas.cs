@@ -16,20 +16,19 @@ namespace proyecto_de_buses.Capainterfaz
 {
     public partial class Form_ventas : Form
     {
-        private List<int> asientosSeleccionados = new List<int>();
-        private LogicaRuta logica = new LogicaRuta();
+        private List<int> asientosSeleccionados = new List<int>(); //aqui se guarda los asientos seleccionados por el user
+        private LogicaRuta logica = new LogicaRuta();//se llama la logica para que se pueda aplicar
 
         public Form_ventas(LogicaRuta logicaRuta)
         {
             InitializeComponent();
-            logica = logicaRuta;
+            logica = logicaRuta; //se llama la logica de la ruta para traer las rutas creadas en matenimiento
         }
 
         private void Form_ventas_Load(object sender, EventArgs e)
         {
-            cborutas.DropDownStyle = ComboBoxStyle.DropDownList;
             cborutas.DataSource = null;
-            cborutas.DataSource = logica.Obtener();
+            cborutas.DataSource = logica.Obtener(); //aqui se agregan las rutas
             PintarAsientos();
         }
         private void cborutas_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,58 +44,48 @@ namespace proyecto_de_buses.Capainterfaz
         }
         private void PintarAsientos()
         {
-            // Pintar todos como disponibles
-            foreach (Control control in tlpasientos.Controls)
-            {
-                if (control is Button btn && btn.Name.StartsWith("btnsiento"))
-                {
-                    btn.BackColor = Color.LightGreen;
-                    btn.Enabled = true;
-                }
-            }
-
-            // Pintar como vendidos los asientos para la ruta y fecha actual
+            
             if (cborutas.SelectedItem is Rutas rutaSeleccionada)
             {
-                var vendidos = LogicaAsiento.ObtenerVendidos()
+                var vendidos = LogicaAsiento.ObtenerVendidos() //utilizando la logica de los vendidos 
                     .Where(a => a.Ruta == rutaSeleccionada.Destino && a.Fecha == dtfecha.Value.ToShortDateString()).ToList();
-
+                //dependiendo de la ruta seleccionada se filtran los asientos,para que sean independientes
                 foreach (var asiento in vendidos)
                 {
                     var btn = tlpasientos.Controls.OfType<Button>().FirstOrDefault(b => b.Text == asiento.NumAsiento.ToString());
-
+                    //se busca el asiento vendido y cuando lo encuentra
                     if (btn != null)
                     {
-                        btn.BackColor = Color.Red;
-                        btn.Enabled = false;
+                        btn.BackColor = Color.Red; //pasa a estar en rojo 
                     }
                 }
             }
         }
         private void btnvolver_ventas_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); 
         }
 
         private void Asiento_click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            int numeroasiento = int.Parse(btn.Name.Replace("btnasiento", ""));
+            Button btn = (Button)sender; 
+            int numeroasiento = int.Parse(btn.Name.Replace("btnasiento", ""));//aqui el numero del asiento se convierte en entero 
+            //y remplaza el btnasiento a "" (osea nada)
 
-            if (btn.BackColor == Color.Red)
+            if (btn.BackColor == Color.Red) //si se presiona un boton con y el color es rojo
             {
-                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor elija otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor seleccione otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;//dice esti
             }
-            if (btn.BackColor == Color.DarkGreen)
+            if (btn.BackColor == Color.DarkGreen)//si el boton esta seleccionado y se vuelve a tocar
             {
-                btn.BackColor = Color.LightGreen;
-                asientosSeleccionados.Remove(numeroasiento);
+                btn.BackColor = Color.LightGreen; //lo cambia a deseleccionado
+                asientosSeleccionados.Remove(numeroasiento);//y quita ese asiento de la clase
             }
             else
             {
-                btn.BackColor = Color.DarkGreen;
-                asientosSeleccionados.Add(numeroasiento);
+                btn.BackColor = Color.DarkGreen;//se cambia a seleccionado 
+                asientosSeleccionados.Add(numeroasiento);// y se agrega a la clase
             }
         }
 
@@ -107,7 +96,7 @@ namespace proyecto_de_buses.Capainterfaz
 
             if (btnpr.BackColor == Color.Red)
             {
-                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor elija otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor seleccione otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (btnpr.BackColor == Color.DarkBlue)
@@ -123,7 +112,7 @@ namespace proyecto_de_buses.Capainterfaz
         }
         private bool ValidarCampos()
         {
-            bool esvalido = true;
+            bool esvalido = true; //validaciones
             DateTime fechaSeleccionada = dtfecha.Value.Date;
             DateTime hoy = DateTime.Today;
             if (asientosSeleccionados.Count == 0) //valida si el nombre esta vacio o no
@@ -131,7 +120,7 @@ namespace proyecto_de_buses.Capainterfaz
                 MessageBox.Show("Para continuar con la compra debe seleccionar al menos un asiento", "No hay asientos seleccionados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 esvalido = false;
             }
-            if (fechaSeleccionada < hoy)
+            if (fechaSeleccionada < hoy) //valida si la fecha es menor a la fecha de hoy (no se puede seleccionar ayer por ejemplo)
             {
                 MessageBox.Show("Para continuar elije una fecha valida", "Fecha Invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 esvalido = false;
@@ -151,8 +140,8 @@ namespace proyecto_de_buses.Capainterfaz
             {
                 return;
             }
-
-            MessageBox.Show("ahora para continuar escriba el nombre y cedula del cliente.", "Asientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //si todo esta bien da un mensaje y abre el form de cliente 
+            MessageBox.Show("Para continuar escriba el nombre y cedula del cliente.", "Asientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Form_cliente formcliente = new Form_cliente();
             if (formcliente.ShowDialog() == DialogResult.OK)
             {

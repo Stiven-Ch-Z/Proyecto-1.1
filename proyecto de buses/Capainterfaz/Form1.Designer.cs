@@ -67,11 +67,11 @@
             lbltitulo.BackColor = Color.FromArgb(64, 0, 0);
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbltitulo.ForeColor = SystemColors.ControlLightLight;
-            lbltitulo.Location = new Point(56, 241);
+            lbltitulo.Location = new Point(117, 241);
             lbltitulo.Name = "lbltitulo";
-            lbltitulo.Size = new Size(704, 38);
+            lbltitulo.Size = new Size(561, 38);
             lbltitulo.TabIndex = 7;
-            lbltitulo.Text = "Bienvenido al gestor de la empresa Gran Central Sabalo";
+            lbltitulo.Text = "Bienvenido al gestor de Gran Central Sabalo";
             // 
             // label1
             // 
@@ -216,7 +216,7 @@
             Controls.Add(pictureBox2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Menu del Gestor";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

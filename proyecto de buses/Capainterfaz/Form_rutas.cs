@@ -60,6 +60,7 @@ namespace proyecto_de_buses.Capainterfaz
                 errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");
                 esvalido = false;
             }
+          
             return esvalido;
         }
         private void btnanadir_Click(object sender, EventArgs e)

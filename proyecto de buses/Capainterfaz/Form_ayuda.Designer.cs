@@ -194,7 +194,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_ayuda";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form_ayuda";
+            Text = "Ayuda";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
