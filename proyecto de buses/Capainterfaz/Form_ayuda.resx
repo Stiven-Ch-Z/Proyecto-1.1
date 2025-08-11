@@ -1700,26 +1700,28 @@
 </value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Como usar el menu  de mantenimiento:   
--Nombre de la ruta: permite al usuario ingresar un nombre especifico para la nueva ruta.
--Precio base de la ruta:Este campo es para establecer un costo inicial asociado a la ruta.
--Hora de salida:Proporciona un campo para seleccionar la hora en que se inicia la ruta.
--Hora de llegada:Permite al usuario establecer la hora estimada en que se finalizará la ruta.
--Botón añadir:Para guardar la información ingresada.
--Botón volver :Facilita al usuario regresar a la pantalla anterior.</value>
+    <value>Como usar el menu de mantenimiento:   
+este menu es utilizado para crear las rutas que luego apareceran disponibles en ventas.
+Al entrar a esta opcion se encontraran 4 apartados que tienen que llenarse para crear la ruta,
+cabe recalcar que el apartado precio base solo acepta numeros decimales y la hora de salida no puede
+ser mayor a la hora de llegada. Una vez llenados los espacios se tiene que presionar el boton "Añadir"
+y si se cumple con los requisitos se agregara correctamente y para volver al menu solo hay que presionar
+el boton "volver"</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Como usar el historial:
-Muestra la informacion de la ruta, Cliente,cedula,ruta,hora de salida,hora de llegada,asientos, cantidad.
--Boton volver: 
-Le permite al usuario regresar a la pantalla anterior.</value>
+Aqui se va a mostrar la informacion de los clientes y que asiento compraron, que ruta eligieron
+el total que pagaron, entre otros. esta informacion se crea automaticamente al realizar 
+una compra en ventas. Para volver al menu presione el boton "Volver"</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Como usar Ventas: 
--Ruta: Permite al usuario seleccionar la ruta.
--Fecha: Permite seleccionar la fecha del tiquete.
--Distribuccion de asientos:Permite seleccionar el asiento a la hora de comprar el tiquete.
--Boton confirmar: Este boton es para confirmar la compra del tiquete.
--Boton volver: Le permite al usuario regresar a la pantalla anterior.</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Como usar el Menu de ventas de tiquets:
+este menu es usado para la venta de tiquets para los clientes, para realizar una venta se tiene
+que seleccionar una ruta, una fecha y los asientos que el cliente quiera, tener en cuenta que hay
+que seleccionar una fecha valida y asientos que esten en verde, una vez hecho esto nos va a salir 
+otro formulario para llenar la informacion del cliente que es el nombre y la cedula, este nombre
+no puede llevar numeros y la cedula tiene que tener 9 numeros para ser valida, una vez hecho esto
+toda esta informacion se va al historial y se completa la venta. Para volver al menu principal tiene 
+que tocar el boton "Volver</value>
   </data>
 </root>

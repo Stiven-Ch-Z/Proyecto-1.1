@@ -29,5 +29,7 @@ namespace proyecto_de_buses.Capainterfaz
         {
             MessageBox.Show("Esta plataforma fue creada por Stiven Chinchilla Zamora y Josue Navarro Monge.");
         }
+
+ 
     }
 }
