@@ -963,7 +963,7 @@
             lbltitulo.BackColor = Color.Lavender;
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbltitulo.ForeColor = SystemColors.ActiveCaptionText;
-            lbltitulo.Location = new Point(81, 18);
+            lbltitulo.Location = new Point(118, 18);
             lbltitulo.Name = "lbltitulo";
             lbltitulo.Size = new Size(346, 38);
             lbltitulo.TabIndex = 79;
