@@ -61,9 +61,9 @@ namespace proyecto_de_buses.Capainterfaz
                 }
             }
         }
-        private void btnvolver_ventas_Click(object sender, EventArgs e)
+        private void btnvolver_ventas_Click(object sender, EventArgs e)//boton volver
         {
-            this.Close(); 
+            this.Close(); //cierra pero no del todo
         }
 
         private void Asiento_click(object sender, EventArgs e)
@@ -92,21 +92,21 @@ namespace proyecto_de_buses.Capainterfaz
         private void Asiento_prefe_click(object sender, EventArgs e)
         {
             Button btnpr = (Button)sender;
-            int numeroasiento = int.Parse(btnpr.Name.Replace("btnasiento", ""));
+            int numeroasiento = int.Parse(btnpr.Name.Replace("btnasiento", ""));//para seleccionar el asiento
 
-            if (btnpr.BackColor == Color.Red)
+            if (btnpr.BackColor == Color.Red)//si esta en color rojo quiere decir que esta ocupado ya
             {
-                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor seleccione otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("El asiento seleccionado no esta disponible, Porfavor seleccione otro.", "Asiento no disponible", MessageBoxButtons.OK, MessageBoxIcon.Error);//y nos da este mensaje de advertencia
+                return;//y retorna 
             }
-            if (btnpr.BackColor == Color.DarkBlue)
+            if (btnpr.BackColor == Color.DarkBlue)//cuando se selecciona el asiento se marca como mas oscuro
             {
-                btnpr.BackColor = Color.Aqua;
+                btnpr.BackColor = Color.Aqua;//se quita el color original
                 asientosSeleccionados.Remove(numeroasiento);
             }
             else
             {
-                btnpr.BackColor = Color.DarkBlue;
+                btnpr.BackColor = Color.DarkBlue;//el asiento marcado queda mas oscuro, quiere decir que fue comprado con exito
                 asientosSeleccionados.Add(numeroasiento);
             }
         }
@@ -136,58 +136,58 @@ namespace proyecto_de_buses.Capainterfaz
 
         private void btnconfirmar_ventas_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
+            if (!ValidarCampos())//valida que los campos esten correctos 
             {
                 return;
             }
             //si todo esta bien da un mensaje y abre el form de cliente 
             MessageBox.Show("Para continuar escriba el nombre y cedula del cliente.", "Asientos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Form_cliente formcliente = new Form_cliente();
-            if (formcliente.ShowDialog() == DialogResult.OK)
+            if (formcliente.ShowDialog() == DialogResult.OK)//si todo esta bien da un "OK"
             {
-                Cliente cliente = formcliente.Cliente;
-                Rutas ruta=(Rutas)cborutas.SelectedItem;
+                Cliente cliente = formcliente.Cliente;//se obtiene el cliente desde el form cliente
+                Rutas ruta=(Rutas)cborutas.SelectedItem;//se obtiene la ruta del combobox y se crea como ruta
                 
                 
-                Venta venta = new Venta
+                Venta venta = new Venta//se crea una nueva instancia de la clase venta y se innicia con sus propiedades
                 {
-                    Cliente = cliente,
-                    Ruta = ruta.Destino,
-                    Hora_Salida = ruta.Horasalida ,
-                    Hora_Llegada=ruta.Horallegada,
-                    Asientos = new List<int>(asientosSeleccionados),
-                    Total = asientosSeleccionados.Count * ruta.Precio,
-                    Fecha = dtfecha.Value.Date
+                    Cliente = cliente,//nombre del cliente
+                    Ruta = ruta.Destino,//ruta que eligio
+                    Hora_Salida = ruta.Horasalida ,//hora de salida
+                    Hora_Llegada=ruta.Horallegada,//hora de llegada
+                    Asientos = new List<int>(asientosSeleccionados),//los asientos selecionados
+                    Total = asientosSeleccionados.Count * ruta.Precio,//el total monetario
+                    Fecha = dtfecha.Value.Date//fecha 
                 };
-                LogicaAgregarVenta.AgregarVenta(venta);
+                LogicaAgregarVenta.AgregarVenta(venta);//se llama al metodo "AgregarVenta" para registrar la nueva venta
 
                 foreach (Control c in tlpasientos.Controls)
                 {
-                    if (c is Button b && b.BackColor ==Color.DarkGreen)
+                    if (c is Button b && b.BackColor ==Color.DarkGreen)//si esta en color verde oscuro a la hora de seleccionar es porque esta disponible
                     {
-                        b.BackColor = Color.Red;
+                        b.BackColor = Color.Red;//si cambia a color rojo es porque ya no esta disponible ese campo para comprarlo nuevamente
                     }
                 }
-                foreach (int num in asientosSeleccionados)
+                foreach (int num in asientosSeleccionados)//va a recorreruno por uno todos los numeros de asientos que estan guardados
                 {
-                    LogicaAsiento.MarcarVendidos(new Asientos
+                    LogicaAsiento.MarcarVendidos(new Asientos//metodo que se llama para ver los asientos vendidos
                     {
-                        NumAsiento = num,
-                        Ruta = ruta.Destino,
-                        Fecha = dtfecha.Value.ToShortDateString()
+                        NumAsiento = num,//nuemro de asiento
+                        Ruta = ruta.Destino,//la ruta de
+                        Fecha = dtfecha.Value.ToShortDateString()//fecha que se asigno
                     });
 
                 }
-                asientosSeleccionados.Clear();
-                PintarAsientos();
-                MessageBox.Show(
-                               $"Compra realizada con éxito.\n\n" +
-                               $"Cliente: {cliente.Nombre}\n" +
-                               $"Cédula: {cliente.Cedula}\n" +
-                               $"Total pagado: ₡{venta.Total:N0}",
-                               "Venta terminada",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Information
+                asientosSeleccionados.Clear();//se limpia la lista de asientos selecionados para que quede libre para una nueva seleccion
+                PintarAsientos();//una vez refrescado la interfaz vuelve a estar como al principio
+                MessageBox.Show(                                        //mensaje que muestra cuando la compra fue realizada con exito
+                               $"Compra realizada con éxito.\n\n" +//mensaje de exito
+                               $"Cliente: {cliente.Nombre}\n" +//nombre del cliente
+                               $"Cédula: {cliente.Cedula}\n" +//cedula del cliente
+                               $"Total pagado: ₡{venta.Total:N0}",//total que pago
+                               "Venta terminada",//mensaje de finalizacion
+                               MessageBoxButtons.OK,//okey para cerrar el mensaje
+                               MessageBoxIcon.Information//icono informativo del mensaje
                                );
 
             }

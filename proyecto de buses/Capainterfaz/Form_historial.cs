@@ -19,36 +19,36 @@ namespace proyecto_de_buses.Capainterfaz
             InitializeComponent();
         }
 
-        private void Form_historial_Load(object sender, EventArgs e)
+        private void Form_historial_Load(object sender, EventArgs e)//metodo que se ejecuta cuando queremos cargar el form historial
         {
-            ActualizarHistorial();
+            ActualizarHistorial();//llama el metodo "ActualizarHistorial" para cargar y mostrar el historial de ventas
         }
 
-        private void ActualizarHistorial()
+        private void ActualizarHistorial()//metodo para actualizar el historial de ventas 
         {
-            var lista = LogicaAgregarVenta.ObtenerVentas()
+            var lista = LogicaAgregarVenta.ObtenerVentas()//consigue los datos atravez de LogicaAgregarVenta.
                 .Select(v => new
-                {
-                    Cliente = v.NombreCliente,
-                    Cedula = v.CedulaCliente,
-                    Ruta = v.Ruta,
-                    Hora_Salida = v.Hora_Salida,
-                    Hora_Llegada = v.Hora_Llegada,
-                    Asientos = v.AsientosTexto,
-                    Cantidad = v.CantidadAsientos,
-                    Total = $"₡{v.Total:N0}",
-                    Fecha = v.Fecha.ToShortDateString()
+                { //propiedades de ventas que se hicieron
+                    Cliente = v.NombreCliente,//nombre del cliente
+                    Cedula = v.CedulaCliente,//cedula del cliente
+                    Ruta = v.Ruta, //ruta que fue vendida
+                    Hora_Salida = v.Hora_Salida,//hora de salida
+                    Hora_Llegada = v.Hora_Llegada,//hota de llegada
+                    Asientos = v.AsientosTexto,//los asientos que se seleccionaron
+                    Cantidad = v.CantidadAsientos,//la cantidad de asientos
+                    Total = $"₡{v.Total:N0}",//el total monetario
+                    Fecha = v.Fecha.ToShortDateString()//la fecha que se selecciono
                 })
-                .ToList();
+                .ToList();// convierte todo eso en una lista
 
-            dgvhistorial.DataSource = null;
-            dgvhistorial.DataSource = lista;
+            dgvhistorial.DataSource = null;//cuando el data esta vacio
+            dgvhistorial.DataSource = lista;//se refresca y queda en forma de lista con esos datos de la venta
 
         }
 
-        private void btnvolver_hist_Click(object sender, EventArgs e)
+        private void btnvolver_hist_Click(object sender, EventArgs e)//boton volver
         {
-            this.Close();   
+            this.Close();   //cierra pero sin salirce del todo y lleva a la persona al menu principal
         }
     }
 }

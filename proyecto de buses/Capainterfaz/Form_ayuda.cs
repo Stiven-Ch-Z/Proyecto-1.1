@@ -20,12 +20,12 @@ namespace proyecto_de_buses.Capainterfaz
 
 
 
-        private void btnvolver_ayu_Click(object sender, EventArgs e)
+        private void btnvolver_ayu_Click(object sender, EventArgs e)//boton volver
         {
-            this.Close();//nos da la opcion de volver
+            this.Close();//nos da la opcion de volver, sin cerrar de todo el programa
         }
 
-        private void btnacerca_Click(object sender, EventArgs e)//mensaje de iformacion
+        private void btnacerca_Click(object sender, EventArgs e)//mensaje de iformacion de quienes crearon la plataforma
         {
             MessageBox.Show("Esta plataforma fue creada por Stiven Chinchilla Zamora y Josue Navarro Monge.");
         }

@@ -11,9 +11,9 @@ namespace proyecto_de_buses
             InitializeComponent();
         }
 
-        private void btnmantenimiento_Click(object sender, EventArgs e)
+        private void btnmantenimiento_Click(object sender, EventArgs e)//metodo que se ejecuta al darle al boton de mantenimiento
         {
-            Form_rutas rutas = new Form_rutas(logicaRuta);
+            Form_rutas rutas = new Form_rutas(logicaRuta);// se crea una nueva instancia del formulario rutas pasando a su logica
             this.Hide();
             rutas.ShowDialog();
             this.Show();
