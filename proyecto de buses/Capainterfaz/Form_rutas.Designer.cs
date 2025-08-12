@@ -164,7 +164,7 @@
             cbohorasalida.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cbohorasalida.DropDownStyle = ComboBoxStyle.DropDownList;
             cbohorasalida.FormattingEnabled = true;
-            cbohorasalida.Items.AddRange(new object[] { "06:00 AM", "08:30 AM", "10:00 AM", "12:30 PM", "02:00 PM", "04:30PM", "06:00 PM", "08:30 PM" });
+            cbohorasalida.Items.AddRange(new object[] { "06:00 AM", "08:30 AM", "10:00 AM", "12:30 PM", "02:00 PM", "04:30 PM", "06:00 PM", "08:30 PM" });
             cbohorasalida.Location = new Point(262, 270);
             cbohorasalida.Name = "cbohorasalida";
             cbohorasalida.Size = new Size(443, 28);
@@ -213,7 +213,7 @@
             cbohorallegada.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             cbohorallegada.DropDownStyle = ComboBoxStyle.DropDownList;
             cbohorallegada.FormattingEnabled = true;
-            cbohorallegada.Items.AddRange(new object[] { "06:30 AM", "09:00AM", "10:30 AM", "01:00 PM", "02:30 PM", "05:00PM", "06:30 PM", "09:00 PM" });
+            cbohorallegada.Items.AddRange(new object[] { "06:30 AM", "09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "05:00 PM", "06:30 PM", "09:00 PM" });
             cbohorallegada.Location = new Point(262, 331);
             cbohorallegada.Name = "cbohorallegada";
             cbohorallegada.Size = new Size(443, 28);

@@ -52,10 +52,11 @@
             btnayuda.FlatStyle = FlatStyle.Popup;
             btnayuda.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnayuda.ForeColor = SystemColors.ActiveCaptionText;
-            btnayuda.Location = new Point(559, 67);
+            btnayuda.Location = new Point(489, 50);
+            btnayuda.Margin = new Padding(3, 2, 3, 2);
             btnayuda.Name = "btnayuda";
             btnayuda.RightToLeft = RightToLeft.Yes;
-            btnayuda.Size = new Size(134, 37);
+            btnayuda.Size = new Size(117, 28);
             btnayuda.TabIndex = 1;
             btnayuda.Text = "Ayuda";
             btnayuda.UseVisualStyleBackColor = false;
@@ -67,11 +68,11 @@
             lbltitulo.BackColor = Color.FromArgb(64, 0, 0);
             lbltitulo.Font = new Font("Segoe UI Historic", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbltitulo.ForeColor = SystemColors.ControlLightLight;
-            lbltitulo.Location = new Point(56, 241);
+            lbltitulo.Location = new Point(102, 181);
             lbltitulo.Name = "lbltitulo";
-            lbltitulo.Size = new Size(704, 38);
+            lbltitulo.Size = new Size(440, 30);
             lbltitulo.TabIndex = 7;
-            lbltitulo.Text = "Bienvenido al gestor de la empresa Gran Central Sabalo";
+            lbltitulo.Text = "Bienvenido al gestor de Gran Central Sabalo";
             // 
             // label1
             // 
@@ -79,9 +80,9 @@
             label1.BackColor = Color.FromArgb(64, 0, 0);
             label1.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(39, 279);
+            label1.Location = new Point(34, 209);
             label1.Name = "label1";
-            label1.Size = new Size(741, 28);
+            label1.Size = new Size(591, 21);
             label1.TabIndex = 9;
             label1.Text = "Por favor seleccione una de las opciones que se encuentran en los botones de arriba";
             label1.Click += label1_Click;
@@ -94,10 +95,11 @@
             btnmantenimiento.FlatStyle = FlatStyle.Popup;
             btnmantenimiento.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnmantenimiento.ForeColor = SystemColors.ActiveCaptionText;
-            btnmantenimiento.Location = new Point(292, 24);
+            btnmantenimiento.Location = new Point(256, 18);
+            btnmantenimiento.Margin = new Padding(3, 2, 3, 2);
             btnmantenimiento.Name = "btnmantenimiento";
             btnmantenimiento.RightToLeft = RightToLeft.Yes;
-            btnmantenimiento.Size = new Size(156, 37);
+            btnmantenimiento.Size = new Size(136, 28);
             btnmantenimiento.TabIndex = 10;
             btnmantenimiento.Text = "Mantenimiento";
             btnmantenimiento.UseVisualStyleBackColor = false;
@@ -111,10 +113,11 @@
             btnhistorial.FlatStyle = FlatStyle.Popup;
             btnhistorial.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnhistorial.ForeColor = SystemColors.ActiveCaptionText;
-            btnhistorial.Location = new Point(635, 24);
+            btnhistorial.Location = new Point(556, 18);
+            btnhistorial.Margin = new Padding(3, 2, 3, 2);
             btnhistorial.Name = "btnhistorial";
             btnhistorial.RightToLeft = RightToLeft.Yes;
-            btnhistorial.Size = new Size(145, 37);
+            btnhistorial.Size = new Size(127, 28);
             btnhistorial.TabIndex = 11;
             btnhistorial.Text = "Historial";
             btnhistorial.UseVisualStyleBackColor = false;
@@ -128,10 +131,11 @@
             btnventas.FlatStyle = FlatStyle.Popup;
             btnventas.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnventas.ForeColor = SystemColors.ActiveCaptionText;
-            btnventas.Location = new Point(468, 24);
+            btnventas.Location = new Point(410, 18);
+            btnventas.Margin = new Padding(3, 2, 3, 2);
             btnventas.Name = "btnventas";
             btnventas.RightToLeft = RightToLeft.Yes;
-            btnventas.Size = new Size(141, 37);
+            btnventas.Size = new Size(123, 28);
             btnventas.TabIndex = 12;
             btnventas.Text = "Ventas";
             btnventas.UseVisualStyleBackColor = false;
@@ -144,10 +148,11 @@
             btnsalir.FlatStyle = FlatStyle.Popup;
             btnsalir.Font = new Font("Segoe UI Historic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnsalir.ForeColor = SystemColors.ActiveCaptionText;
-            btnsalir.Location = new Point(372, 67);
+            btnsalir.Location = new Point(326, 50);
+            btnsalir.Margin = new Padding(3, 2, 3, 2);
             btnsalir.Name = "btnsalir";
             btnsalir.RightToLeft = RightToLeft.Yes;
-            btnsalir.Size = new Size(141, 38);
+            btnsalir.Size = new Size(123, 28);
             btnsalir.TabIndex = 13;
             btnsalir.Text = "Salir";
             btnsalir.UseVisualStyleBackColor = false;
@@ -165,8 +170,9 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(797, 140);
+            panel1.Size = new Size(697, 105);
             panel1.TabIndex = 14;
             panel1.Paint += panel1_Paint;
             // 
@@ -174,9 +180,10 @@
             // 
             panel2.BackColor = Color.Plum;
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 124);
+            panel2.Location = new Point(0, 93);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(797, 16);
+            panel2.Size = new Size(697, 12);
             panel2.TabIndex = 15;
             // 
             // pictureBox1
@@ -185,8 +192,9 @@
             pictureBox1.BackColor = Color.Lavender;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(266, 136);
+            pictureBox1.Size = new Size(233, 102);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
@@ -196,27 +204,29 @@
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox2.BackColor = Color.Navy;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 142);
+            pictureBox2.Location = new Point(0, 106);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(797, 314);
+            pictureBox2.Size = new Size(697, 236);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 16;
             pictureBox2.TabStop = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HighlightText;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(797, 451);
+            ClientSize = new Size(697, 338);
             Controls.Add(label1);
             Controls.Add(lbltitulo);
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Menu del Gestor";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

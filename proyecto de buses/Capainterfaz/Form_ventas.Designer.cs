@@ -126,6 +126,7 @@
             // 
             // cborutas
             // 
+            cborutas.DropDownStyle = ComboBoxStyle.DropDownList;
             cborutas.FormattingEnabled = true;
             cborutas.Location = new Point(212, 136);
             cborutas.Name = "cborutas";

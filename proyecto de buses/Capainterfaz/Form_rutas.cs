@@ -27,7 +27,7 @@ namespace proyecto_de_buses.Capainterfaz
         {
 
         }
-        private void Limpiar()
+        private void Limpiar()//metodo para limpiar campos
         {
             txtrutas.Clear();
             txtprecio.Clear();
@@ -52,38 +52,39 @@ namespace proyecto_de_buses.Capainterfaz
 
             if (cbohorasalida.SelectedIndex == -1) // si el combobox esta vacio 
             {
-                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");
+                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");//da este mensaje
                 esvalido = false;
             }
             if (cbohorallegada.SelectedIndex == -1) // si el combobox esta vacio 
             {
-                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");
+                errorProviderRutas.SetError(cbohorasalida, "Elija una hora para la ruta");//nos da este mensaje
                 esvalido = false;
             }
+          
             return esvalido;
         }
-        private void btnanadir_Click(object sender, EventArgs e)
+        private void btnanadir_Click(object sender, EventArgs e)//boton anadir
         {
-            if (!ValidarCampos())
+            if (!ValidarCampos())//valida que los campos de entrada esten correctos
             {
                 return;
             }
-            Rutas ruta = new Rutas
+            Rutas ruta = new Rutas//  donde vamos a crear una nueva ruta
             {
-                Destino = txtrutas.Text,
-                Precio = decimal.Parse(txtprecio.Text),
-                Horasalida = cbohorasalida.SelectedItem.ToString(),
-                Horallegada = cbohorallegada.SelectedItem.ToString()
+                Destino = txtrutas.Text,//el nombre de la ruta
+                Precio = decimal.Parse(txtprecio.Text),//el precio de ella
+                Horasalida = cbohorasalida.SelectedItem.ToString(),//la hora de salida
+                Horallegada = cbohorallegada.SelectedItem.ToString()//hora de llegada
             };
-            logica.AgregarRuta(ruta);
-            MessageBox.Show("La ruta ha sido agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Limpiar();
+            logica.AgregarRuta(ruta);//se llama al metodo agregar ruta para agregarla
+            MessageBox.Show("La ruta ha sido agregada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);//cuando la ruta se agrega nos da este mensaje, haciendonos ver que la ruta se agrego con exito
+            Limpiar();//metodo que limpia los campos una vez se haya agregado una ruta
         }
 
 
-        private void btnvolver_rut_Click(object sender, EventArgs e)
+        private void btnvolver_rut_Click(object sender, EventArgs e)//boton volver
         {
-            this.Close();//nos da la opcion de volver 
+            this.Close();//nos da la opcion de volver al menu principal sin salirnos por completo.
         }
 
     }

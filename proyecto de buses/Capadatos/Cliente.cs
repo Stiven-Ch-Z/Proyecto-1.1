@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace proyecto_de_buses.Capadatos
 {
-    public class Cliente
+    public class Cliente//encapsulamiento de cliente
     {
-        public string Nombre {  get; set; } 
-        public int Cedula{  get; set; }    
+        public string Nombre {  get; set; } //encapsulamiento de nombre
+        public int Cedula{  get; set; }    //encapsulamiento de la cedula
     }
 }

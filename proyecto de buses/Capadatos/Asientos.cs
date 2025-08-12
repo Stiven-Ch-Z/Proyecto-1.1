@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace proyecto_de_buses.Capadatos
 {
-    public class Asientos
-    {
-        public int NumAsiento { get; set; }
+    public class Asientos//encapsulamientos de propiedades
+    {                                       
+        public int NumAsiento { get; set; }//encapsulamiento del numero de asiento
         
-        public string Ruta { get; set; }
+        public string Ruta { get; set; }//encapsulamiento de ruta
         
-        public string Fecha { get; set; }
-
+        public string Fecha { get; set; } //encapsulamiento  de fecha
     }
 }
