@@ -23,10 +23,12 @@ namespace proyecto_de_buses.Capainterfaz
         {
             InitializeComponent();
             logica = logicaRuta; //se llama la logica de la ruta para traer las rutas creadas en matenimiento
+            
         }
 
         private void Form_ventas_Load(object sender, EventArgs e)
         {
+            
             cborutas.DataSource = null;
             cborutas.DataSource = logica.Obtener(); //aqui se agregan las rutas
             PintarAsientos();
@@ -189,7 +191,7 @@ namespace proyecto_de_buses.Capainterfaz
                                MessageBoxButtons.OK,//okey para cerrar el mensaje
                                MessageBoxIcon.Information//icono informativo del mensaje
                                );
-
+               
             }
 
         }
